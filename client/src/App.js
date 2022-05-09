@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   const insert = () => {
-    Axios.post("54.235.13.47/insert",
+    Axios.post('http://54.235.13.47:5000/insert',
       { name: name, quantity: quantity });
       Swal.fire(
         `Added ${name}`,
@@ -31,7 +31,7 @@ function App() {
   };
 
   const update = (id) => {
-    Axios.put("54.235.13.47:5000/update",
+    Axios.put('http://54.235.13.47:5000/update',
       { id: id, newQuantity: newQuantity });
       Swal.fire(
         `Changed Qty to ${newQuantity}`,
@@ -41,7 +41,7 @@ function App() {
   };
 
   const remove = (id) => {
-    Axios.delete(`54.235.13.47:5000/remove/${id}`);
+    Axios.delete(`http://54.235.13.47:5000/remove/${id}`);
     Swal.fire(
       `Deleted id: ${id}`,
       'Removed from DB',
