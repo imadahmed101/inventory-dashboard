@@ -14,14 +14,14 @@ function App() {
   const [newQuantity, setNewQuantity] = useState(0);
 
   useEffect(() => {
-    Axios.get('/read')
+    Axios.get('http://54.235.13.47:5000/read')
       .then((response) => {
         setList(response.data);
       });
   }, []);
 
   const insert = () => {
-    Axios.post("54.235.13.47:5000/insert",
+    Axios.post("54.235.13.47/insert",
       { name: name, quantity: quantity });
       Swal.fire(
         `Added ${name}`,
