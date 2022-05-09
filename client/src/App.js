@@ -14,14 +14,14 @@ function App() {
   const [newQuantity, setNewQuantity] = useState(0);
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/read")
+    Axios.get("54.235.13.47:5000/read")
       .then((response) => {
         setList(response.data);
       });
   }, []);
 
   const insert = () => {
-    Axios.post("http://localhost:5000/insert",
+    Axios.post("54.235.13.47:5000/insert",
       { name: name, quantity: quantity });
       Swal.fire(
         `Added ${name}`,
@@ -31,7 +31,7 @@ function App() {
   };
 
   const update = (id) => {
-    Axios.put("http://localhost:5000/update",
+    Axios.put("54.235.13.47:5000/update",
       { id: id, newQuantity: newQuantity });
       Swal.fire(
         `Changed Qty to ${newQuantity}`,
@@ -41,7 +41,7 @@ function App() {
   };
 
   const remove = (id) => {
-    Axios.delete(`http://localhost:5000/remove/${id}`);
+    Axios.delete(`54.235.13.47:5000/remove/${id}`);
     Swal.fire(
       `Deleted id: ${id}`,
       'Removed from DB',
