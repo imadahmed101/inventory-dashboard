@@ -14,7 +14,7 @@ function App() {
   const [newQuantity, setNewQuantity] = useState(0);
 
   useEffect(() => {
-    Axios.get("54.235.13.47:5000/read")
+    Axios.get("54.235.13.47/read")
       .then((response) => {
         setList(response.data);
       });
