@@ -2,4 +2,4 @@
 
 Full Stack MERN Application used for inventory management.
 
-Frontend portion of the application.
+Backend Portion of the application.
