@@ -1,34 +1,43 @@
 import { useState, useEffect } from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Axios from 'axios';
-import Navigation from './components/Navigation';
-import { Container, Row, Col, Table } from 'react-bootstrap';
 import Swal from 'sweetalert2';
+import { Navigation, Sidebar } from './components'
+import { Box, Stack, createTheme, ThemeProvider } from '@mui/material'
 
 function App() {
 
+  
+  
+  const [mode, setMode] = useState("light");
   const [list, setList] = useState([]);
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState(0);
   const [newQuantity, setNewQuantity] = useState(0);
-
+  
+  const darkTheme = createTheme({
+    palette: {
+          mode
+      },
+  });
+  
   useEffect(() => {
     Axios.get('http://54.235.13.47:5000/read')
-      .then((response) => {
-        setList(response.data);
-      });
+    .then((response) => {
+      setList(response.data);
+    });
   }, []);
 
+  
   const insert = () => {
     Axios.post('http://54.235.13.47:5000/insert',
-      { name: name, quantity: quantity });
-      Swal.fire(
-        `Added ${name}`,
-        'Inserted into DB',
-        'success'
+    { name: name, quantity: quantity });
+    Swal.fire(
+      `Added ${name}`,
+      'Inserted into DB',
+      'success'
       )
-  };
+    };
+    
 
   const update = (id) => {
     Axios.put('http://54.235.13.47:5000/update',
@@ -50,14 +59,16 @@ function App() {
   };
 
   return (
-    <div>
+    <ThemeProvider theme={darkTheme}>
 
-
-      <div className="App">
+      <Box bgcolor={"background.default"} color={"text.primary"}>
+      
+      <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar setMode={setMode} mode={mode}/>
+        <Box flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>            
         <h3>Inventory Management Dashboard</h3>
         <p>Spiceez Spicy Spice Mix - What A Mouthful!</p>
 
-        <div className="addSpices">
           <p>Add new spices to the inventory</p>
 
           <input type="text" placeholder="Enter Name"
@@ -68,49 +79,45 @@ function App() {
             onChange={(event) => { setQuantity(event.target.value) }} />
           <br />
           <button onClick={insert}>Add</button>
-        </div>
 
         <h3>Current Inventory:</h3>
 
-        <Container fluid>
-          <Row className="tableHeader">
+        <table>
+          <thead>
 
+          <tr>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Update</th>
+            <th>Actions</th>
+          </tr>
 
-            <Col>Name</Col>
-            <Col>Quantity</Col>
-            <Col>Update Qty</Col>
-            <Col>Action</Col>
-
-          </Row>
-          {list.map((val, key) => {
-            return (
-              <div key={key}>
-
-
-                <Row>
-                  <hr />
-
-                  <Col>{val.name}</Col>
-                  <Col>{val.quantity}</Col>
-
-                  <Col>
+          </thead>
+          <tbody>
+            {list.map((val, key) => {
+              return(
+                <tr key={key}>
+                  <td>{val.name}</td>
+                  <td>{val.quantity}</td>
+                  <td>
                     <input type="number" placeholder="enter new quantity..."
                       onChange={(event) => { setNewQuantity(event.target.value) }} />
-                  </Col>
-                  <Col>
+                  </td>
+                  <td>
                     <button onClick={() => update(val._id)}>Update</button>
 
                     <button onClick={() => remove(val._id)}>Delete</button>
-                  </Col>
-
-                </Row>
-              </div>
-            );
-          })}
-        </Container>
-
-      </div>
-    </div>
+                  </td>
+                </tr>
+              )
+              
+            })}
+          </tbody>
+        </table>
+        </Box>
+        </Stack>
+      </Box>
+              </ThemeProvider>
   );
 }
 
