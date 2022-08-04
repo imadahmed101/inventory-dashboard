@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from '@mui/material'
-import { ContactPage, Home, Inbox, Info, ShoppingCart, Nightlight, Favorite } from '@mui/icons-material'
+import { ContactPage, Home, Inbox, Info, ShoppingCart, Nightlight, Favorite, ManageSearch } from '@mui/icons-material'
 
 const Sidebar = ({mode, setMode}) => {
   return (
@@ -8,32 +8,36 @@ const Sidebar = ({mode, setMode}) => {
       <Box position="fixed">
 
         <List>
+          
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#home">
+            <ListItemButton component="a" href="/">
               <ListItemIcon>
                 <Home />
               </ListItemIcon>
               <ListItemText primary="Homepage" />
             </ListItemButton>
           </ListItem>
+          
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#favourites">
+            <ListItemButton component="a" href="/dashboard">
               <ListItemIcon>
-                <Favorite />
+                <ManageSearch />
               </ListItemIcon>
-              <ListItemText primary="Favourites" />
+              <ListItemText primary="Inventory" />
             </ListItemButton>
           </ListItem>
+          
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#shop">
+            <ListItemButton component="a" href="/shop">
               <ListItemIcon>
                 <ShoppingCart />
               </ListItemIcon>
               <ListItemText primary="Shop" />
             </ListItemButton>
           </ListItem>
+          
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#shop">
+            <ListItemButton component="a">
               <ListItemIcon>
                 <Nightlight />
               </ListItemIcon>
