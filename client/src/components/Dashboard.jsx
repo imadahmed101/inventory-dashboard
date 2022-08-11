@@ -6,13 +6,10 @@ import { Box, Stack, createTheme, ThemeProvider, Typography } from '@mui/materia
 function Dashboard() {
 
 
-
-
   const [list, setList] = useState([]);
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState(0);
   const [newQuantity, setNewQuantity] = useState(0);
-
 
 
   useEffect(() => {
@@ -33,12 +30,31 @@ function Dashboard() {
     )
   };
 
-
   const update = (id) => {
     Axios.put('http://localhost:5000/update',
       { id: id, newQuantity: newQuantity });
     Swal.fire(
       `Changed Qty to ${newQuantity}`,
+      'Updated DB',
+      'success'
+    )
+  };
+
+  const updateFeatured = (id) => {
+    Axios.put('http://localhost:5000/updatefeatured',
+      { id: id });
+    Swal.fire(
+      'Changed To Featured Status',
+      'Updated DB',
+      'success'
+    )
+  };
+
+  const updateUnfeatured = (id) => {
+    Axios.put('http://localhost:5000/updateunfeatured',
+      { id: id });
+    Swal.fire(
+      'Changed To Unfeatured Status',
       'Updated DB',
       'success'
     )
@@ -77,6 +93,7 @@ function Dashboard() {
           <tr>
             <th>Name</th>
             <th>Qty</th>
+            <th>Featured</th>
             <th>Update</th>
             <th>Actions</th>
           </tr>
@@ -88,13 +105,15 @@ function Dashboard() {
               <tr key={key}>
                 <td>{val.name}</td>
                 <td>{val.quantity}</td>
+                <td>{val.featured}</td>
                 <td>
                   <input type="number" placeholder="enter new quantity..."
                     onChange={(event) => { setNewQuantity(event.target.value) }} />
                 </td>
                 <td>
+                  <button onClick={() => updateUnfeatured(val._id)}>Unfeatured</button>
+                  <button onClick={() => updateFeatured(val._id)}>Featured</button>
                   <button onClick={() => update(val._id)}>Update</button>
-
                   <button onClick={() => remove(val._id)}>Delete</button>
                 </td>
               </tr>

@@ -9,6 +9,10 @@ const SpiceSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    featured: {
+        type: String,
+        required: false,
+    }
 });
 
 const Spices = mongoose.model("Spice", SpiceSchema);

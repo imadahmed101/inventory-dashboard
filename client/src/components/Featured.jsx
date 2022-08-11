@@ -1,10 +1,39 @@
+import { useState, useEffect } from 'react';
+import Axios from 'axios';
+import { Box, Stack, createTheme, ThemeProvider, Typography, Paper, Grid, Rating, Container } from '@mui/material'
+import Item from './Item'
+
 function Featured() {
 
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    Axios.get('http://localhost:5000/read')
+      .then((response) => {
+        setList(response.data);
+      });
+  }, []);
+
   return (
-    <div height={'500px'}>
-      <h1>Featured Products</h1>
-      <img src='/fire.jpg' width={'200px'} />
-    </div>
+    <Box flex={3} p={2}>
+      <Typography variant='h3' marginBottom='50px'>Featured Items</Typography>
+
+      <Grid container>
+
+        {
+          list.filter((featuredList) =>
+            featuredList.featured.includes("Yes")
+          ).map((featuredList) => (<div key={featuredList.featured}>
+            <Grid item>
+              <Item name={featuredList.name} />
+
+            </Grid>
+          </div>))
+        }
+      </Grid>
+    </Box>
+
+
   );
 }
 

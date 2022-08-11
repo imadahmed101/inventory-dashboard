@@ -37,6 +37,7 @@ app.post('/insert', async (req, res) => {
     }
 });
 
+
 app.put('/update', async (req, res) => {
     const newQuantity = req.body.newQuantity;
     const id = req.body.id;
@@ -46,6 +47,36 @@ app.put('/update', async (req, res) => {
             update.quantity = newQuantity;
             update.save();
             console.log(`updated quantity to ${newQuantity} in db`);
+        })
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+app.put('/updatefeatured', async (req, res) => {
+    const featured = "Yes";
+    const id = req.body.id;
+
+    try {
+        SpicesModel.findById(id, (err, update) => {
+            update.featured = featured;
+            update.save();
+            console.log('updated to featured in db');
+        })
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+app.put('/updateunfeatured', async (req, res) => {
+    const featured = "No";
+    const id = req.body.id;
+
+    try {
+        SpicesModel.findById(id, (err, update) => {
+            update.featured = featured;
+            update.save();
+            console.log('updated to unfeatured in db');
         })
     } catch (err) {
         console.log(err);
