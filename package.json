@@ -1,0 +1,19 @@
+{
+  "name": "spiceez",
+  "version": "1.0.0",
+  "description": "Full Stack MERN Application used for inventory management.",
+  "main": "/client/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imadahmed101/inventory-dashboard.git"
+  },
+  "author": "Syed Imad Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imadahmed101/inventory-dashboard/issues"
+  },
+  "homepage": "https://github.com/imadahmed101/inventory-dashboard#readme"
+}
