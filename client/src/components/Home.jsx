@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { Hero } from '.'
+import { Hero, Featured, About } from '/'
 import { Box } from '@mui/material'
 
 function Home() {
@@ -7,6 +7,8 @@ function Home() {
     return (
         <Box flex={3} p={2}>
             <Hero />
+            <Featured />
+            <About />
         </Box>
     )
 }
