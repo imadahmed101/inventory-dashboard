@@ -8,7 +8,7 @@ function Shop() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    Axios.get('http://localhost:5000/read')
+    Axios.get('http://54.234.150.219:5000/read')
       .then((response) => {
         setList(response.data);
       });

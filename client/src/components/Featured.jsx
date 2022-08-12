@@ -8,7 +8,7 @@ function Featured() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    Axios.get('http://localhost:5000/read')
+    Axios.get('http://54.234.150.219:5000/read')
       .then((response) => {
         setList(response.data);
       });
@@ -23,7 +23,7 @@ function Featured() {
         {
           list.filter((featuredList) =>
             featuredList.featured.includes("Yes")
-          ).map((featuredList) => (<div key={featuredList.featured}>
+          ).map((featuredList) => (<div key={featuredList.id}>
             <Grid item>
               <Item name={featuredList.name} />
 

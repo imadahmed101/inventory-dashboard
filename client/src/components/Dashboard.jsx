@@ -13,7 +13,7 @@ function Dashboard() {
 
 
   useEffect(() => {
-    Axios.get('http://localhost:5000/read')
+    Axios.get('http://54.234.150.219:5000/read')
       .then((response) => {
         setList(response.data);
       });
@@ -21,7 +21,7 @@ function Dashboard() {
 
 
   const insert = () => {
-    Axios.post('http://localhost:5000/insert',
+    Axios.post('http://54.234.150.219:5000/insert',
       { name: name, quantity: quantity });
     Swal.fire(
       `Added ${name}`,
@@ -31,7 +31,7 @@ function Dashboard() {
   };
 
   const update = (id) => {
-    Axios.put('http://localhost:5000/update',
+    Axios.put('http://54.234.150.219:5000/update',
       { id: id, newQuantity: newQuantity });
     Swal.fire(
       `Changed Qty to ${newQuantity}`,
@@ -41,7 +41,7 @@ function Dashboard() {
   };
 
   const updateFeatured = (id) => {
-    Axios.put('http://localhost:5000/updatefeatured',
+    Axios.put('http://54.234.150.219:5000/updatefeatured',
       { id: id });
     Swal.fire(
       'Changed To Featured Status',
@@ -51,7 +51,7 @@ function Dashboard() {
   };
 
   const updateUnfeatured = (id) => {
-    Axios.put('http://localhost:5000/updateunfeatured',
+    Axios.put('http://54.234.150.219:5000/updateunfeatured',
       { id: id });
     Swal.fire(
       'Changed To Unfeatured Status',
@@ -61,7 +61,7 @@ function Dashboard() {
   };
 
   const remove = (id) => {
-    Axios.delete(`http://localhost:5000/remove/${id}`);
+    Axios.delete(`http://54.234.150.219:5000/remove/${id}`);
     Swal.fire(
       `Deleted id: ${id}`,
       'Removed from DB',
