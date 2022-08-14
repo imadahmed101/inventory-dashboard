@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { Hero, Featured, About } from '/'
+import { Hero, Featured, About, HowToUse } from '/'
 import { Box } from '@mui/material'
 
 function Home() {
@@ -9,6 +9,7 @@ function Home() {
             <Hero />
             <Featured />
             <About />
+            <HowToUse />
         </Box>
     )
 }

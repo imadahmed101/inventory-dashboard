@@ -8,7 +8,7 @@ function Hero() {
         <Grid item xs={2} sm={4} md={6}>
 
           <Typography variant="h2" marginBottom="20px">Fresh Spice Mixes</Typography>
-          <Typography variant="h4" marginBottom="20px">Check Out Our Different Blends</Typography>
+          <Typography variant="h4" marginBottom="50px">Check Out Our Different Blends</Typography>
           <Button variant="contained" size="large" href="/shop">Shop Now</Button>
         </Grid>
         <Grid item xs={2} sm={4} md={6}>
