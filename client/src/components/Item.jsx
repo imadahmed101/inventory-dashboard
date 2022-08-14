@@ -5,14 +5,14 @@ import { Thermostat, LocalFireDepartment } from '@mui/icons-material'
 const Item = ({ name }) => {
     return (
         
-            <Paper elevation="3" sx={{marginBottom: "15px", marginRight: "15px", width: "250px"}}>
+            <Paper elevation="3" sx={{margin: "0px 25px 25px 25px", width: "250px"}}>
 
                 <img
                     src='/fire.jpg'
                     alt="fire"
                     className='img'
-                    height= "100px"
-                    width= "100px"/>
+                    height= "250px"
+                    width= "250px"/>
                 <Box paddingX={1}>
                     <Typography variant="subtitle1" component="h2">{name}</Typography>
                     <Box
