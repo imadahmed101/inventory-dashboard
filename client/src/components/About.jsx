@@ -1,14 +1,18 @@
+import { Box, Typography } from '@mui/material'
+
 function About() {
 
-    return (
-      <div>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-      </div>
-    );
-  }
-  
-  
-  export default About;
+  return (
+    <Box flex={3} p={2}>
+      <Typography variant='h3' marginBottom='50px'>What Is Spiceez?</Typography>
+      <Typography variant='h6'>Spiceez is a company dedicated to bringing an authentic and flavourful element into the traditional South Asian dishes.</Typography>
+      <br/>
+      <Typography variant='h6'>Each blend of spices is carefully curated to provide an excellent taste to the meals you make at home.</Typography>
+      <br/>
+      <Typography variant='h6'>Try out one of our spice mixes the next time you cook to get an appetizing and mouth watering meal.</Typography>
+    </ Box>
+  );
+}
+
+
+export default About;
