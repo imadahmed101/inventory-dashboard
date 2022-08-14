@@ -1,19 +1,21 @@
-import './Hero.css'
-import {Button} from '@mui/material'
+import { Button, Box, Typography, Grid } from '@mui/material'
 
 function Hero() {
 
   return (
-    <div className="hero-page">
-      <div className="hero-page-left">
-        <h1>Fresh Spice Mixes</h1>
-        <h2>Check out the lineup</h2>
-        <Button variant="contained" size="large" href="/shop">Shop Now</Button>
-      </div>
-      <div className="hero-page-right">
-        <img src='/fire.jpg' className="hero-image"/>
-      </div>
-    </div>
+    <Box>
+      <Grid container columns={{xs: 4, sm: 8, md: 12}} alignItems="center" textAlign="center">
+        <Grid item xs={2} sm={4} md={6}>
+
+          <Typography variant="h2" marginBottom="20px">Fresh Spice Mixes</Typography>
+          <Typography variant="h4" marginBottom="20px">Check Out Our Different Blends</Typography>
+          <Button variant="contained" size="large" href="/shop">Shop Now</Button>
+        </Grid>
+        <Grid item xs={2} sm={4} md={6}>
+          <img src='/fire.jpg' height="400px" width="400px" />
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 
