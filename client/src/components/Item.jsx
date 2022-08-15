@@ -21,10 +21,10 @@ const Item = ({ name }) => {
                             alignItems: "Center"
                         }}>
                         <LocalFireDepartment sx={{ width: 20 }} />
-                        <Typography variant="body2" component="p" marginLeft={0.5}>Spicy</Typography>
+                        <Typography variant="body2" component="p" ml={0.5}>Spicy</Typography>
                     </Box>
                     <Box>
-                        <Typography variant="h6" component="h3" marginLeft={0.5}>From $2.99</Typography>
+                        <Typography variant="h6" component="h3" ml={0.5}>From $2.99</Typography>
                     </Box>
                 </Box>
             </Paper>
