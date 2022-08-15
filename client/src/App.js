@@ -13,8 +13,8 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
+        <Navbar setMode={setMode} mode={mode} />
         <Router>
-          <Navbar setMode={setMode} mode={mode}/>
           <Stack direction="row">
             <Routes>
               <Route path="/" element={<Home />} />
