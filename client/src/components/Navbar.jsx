@@ -9,7 +9,7 @@ const Navbar = ({ mode, setMode }) => {
 
     <AppBar position="sticky">
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        
+
         <Typography variant="h6" component="a" href="/" sx={{ color: "white", textDecoration: "none" }}>
           Spiceez
         </Typography>
@@ -21,15 +21,21 @@ const Navbar = ({ mode, setMode }) => {
         </Box>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <Brightness4 sx={{ display: { xs: "none", sm: "flex" } }} />
-          <Button color="inherit" sx={{ display: { xs: "none", sm: "flex" } }}>Login</Button>
-          <ShoppingCart />
-          <MenuIcon sx={{ display: { xs: "flex", sm: "none" } }} onClick={(e)=>setOpen(true)} />
+          <IconButton component="a" onClick={(e) => setMode(mode === "light" ? "dark" : "light")} sx={{ display: { xs: "none", sm: "flex" } }} >
+            <Brightness4 sx={{ color: "white" }} />
+          </IconButton>
+          <Button href="/login" color="inherit" sx={{ display: { xs: "none", sm: "flex" } }}>Login</Button>
+          <IconButton href="/cart">
+            <ShoppingCart sx={{color: "white"}}/>
+          </IconButton>
+          <IconButton sx={{ display: { xs: "flex", sm: "none" } }} onClick={(e) => setOpen(true)} >
+            <MenuIcon sx={{color: "white"}}/>
+          </IconButton>
         </Box>
 
-          <Menu
+        <Menu
           open={open}
-          onClose={(e)=>setOpen(false)}
+          onClose={(e) => setOpen(false)}
           anchorOrigin={{
             vertical: 'top',
             horizontal: 'right',
@@ -38,15 +44,17 @@ const Navbar = ({ mode, setMode }) => {
             vertical: 'top',
             horizontal: 'right',
           }}
-          >
+        >
           <MenuItem component="a" href="/">Home</MenuItem>
           <MenuItem component="a" href="/dashboard">Inventory</MenuItem>
           <MenuItem component="a" href="/shop">Shop</MenuItem>
           <Box textAlign="center">
-          <Brightness4/>
+          <IconButton onClick={(e) => setMode(mode === "light" ? "dark" : "light")} >
+          {mode === 'dark' ? <Brightness4 /> : <Brightness4 sx={{ color: "black" }} />}
+          </IconButton>
           </Box>
-          <MenuItem component="a" href="/" sx={{bgcolor: "lightgray", borderRadius: "25px"}}>Login</MenuItem>
-          </Menu>
+          <MenuItem component="a" href="/login" sx={{ bgcolor: "gray", borderRadius: "25px" }}>Login</MenuItem>
+        </Menu>
 
       </Toolbar>
     </AppBar>

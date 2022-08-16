@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { Hero, Featured, About, HowToUse } from '/'
+import { Hero, Featured, About, HowToUse } from '../components'
 import { Box } from '@mui/material'
 
 function Home() {
