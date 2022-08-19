@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {  Navbar } from './components/index';
 import { Cart, Home, Dashboard, Shop, Login, Register } from './pages/index';
 import { Stack, Box, createTheme, ThemeProvider } from '@mui/material'
 
 function App() {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState(localStorage.theme || "light");
+
   const darkTheme = createTheme({
     palette: {
       mode
     },
   });
   
+  useEffect(() => {
+    localStorage.setItem("theme", mode)
+  },[mode]);
+
   return (
     <ThemeProvider theme={darkTheme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
