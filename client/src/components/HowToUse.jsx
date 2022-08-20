@@ -1,5 +1,5 @@
-import { Box, Stack, createTheme, ThemeProvider, Typography, Paper, Grid, Rating, Container } from '@mui/material'
-import { LocalShipping, Add, LocalDining, EmojiEmotions} from '@mui/icons-material'
+import { Box, Typography, Grid } from '@mui/material'
+import { LocalShipping, LocalDining, EmojiEmotions} from '@mui/icons-material'
 
 function HowToUse() {
 

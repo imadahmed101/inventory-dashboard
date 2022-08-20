@@ -12,7 +12,7 @@ function Hero() {
           <Button variant="contained" size="large" href="/shop">Shop Now</Button>
         </Grid>
         <Grid item xs={2} sm={4} md={6} justifyContent="center" sx={{display: { xs: 'none', md: 'flex' }}}>
-          <img src='/fire.jpg' height="400px" width="400px" />
+          <img src='/fire.jpg' alt="landing page display of fire" height="400px" width="400px" />
         </Grid>
       </Grid>
     </Box>

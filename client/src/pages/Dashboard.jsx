@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import Swal from 'sweetalert2';
-import { Box, Stack, createTheme, ThemeProvider, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 function Dashboard() {
 

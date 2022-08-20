@@ -19,7 +19,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box bgcolor={"background.default"} color={"text.primary"}>
+      <Box bgcolor={"background.default"} color={"text.primary"} minHeight="100vh">
         <Navbar setMode={setMode} mode={mode} />
         <Router>
           <Stack direction="row">

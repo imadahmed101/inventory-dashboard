@@ -1,5 +1,5 @@
-import { Paper, Grid, Typography, Box, Rating } from '@mui/material'
-import { Thermostat, LocalFireDepartment } from '@mui/icons-material'
+import { Paper, Typography, Box } from '@mui/material'
+import { LocalFireDepartment } from '@mui/icons-material'
 
 
 const Item = ({ name }) => {

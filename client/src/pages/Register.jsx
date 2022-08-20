@@ -24,6 +24,15 @@ function Register() {
         const data = await response.json();
 
         console.log(data);
+
+        if(data.status === 'ok') {
+            alert('Registration successful')
+            window.location.href = '/login'
+          }
+          else if(data.status === 'error:') {
+            alert('Registration unsuccessful')
+          }
+        
     }
 
     return (

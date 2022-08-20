@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, MenuItem, Menu } from '@mui/material'
-import { Menu as MenuIcon, Brightness4, ShoppingCart, Person } from '@mui/icons-material'
+import { Menu as MenuIcon, Brightness4, ShoppingCart } from '@mui/icons-material'
 
 const Navbar = ({ mode, setMode }) => {
   const [open, setOpen] = useState(false);

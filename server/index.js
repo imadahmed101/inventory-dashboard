@@ -116,7 +116,7 @@ app.post('/api/register', async (req, res) => {
     }
     catch(err) {
         console.log(err)
-        res.json({ status: 'error:', error: 'Duplicate email' })
+        res.json({ status: 'error:', error: 'Registration Error' })
     }
 })
 

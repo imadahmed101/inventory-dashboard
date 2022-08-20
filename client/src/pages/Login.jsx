@@ -20,11 +20,11 @@ function Login() {
   })
   
   const data = await response.json()
-  console.log(email, password, 'yo', data, data.status)
+  console.log(email, password, data, data.status)
 
   if(data.status === 'ok') {
     alert('Login successful')
-    window.location.href = '/login'
+    window.location.href = '/'
   }
   else if(data.status === 'error:') {
     alert('Incorrect username and password')

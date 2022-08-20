@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
-import { Box, Stack, createTheme, ThemeProvider, Typography, Paper, Grid, Rating, Container } from '@mui/material'
+import { Box, Typography, Grid } from '@mui/material'
 import Item from '../components/Item'
 
 function Shop() {
