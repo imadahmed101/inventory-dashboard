@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {  Navbar } from './components/index';
+import {  Navbar, Footer } from './components/index';
 import { Cart, Home, Dashboard, Shop, Login, Register } from './pages/index';
 import { Stack, Box, createTheme, ThemeProvider } from '@mui/material'
 
@@ -33,6 +33,7 @@ function App() {
             </Routes>
           </Stack>
         </Router>
+        <Footer />
       </Box>
     </ThemeProvider>
   );
