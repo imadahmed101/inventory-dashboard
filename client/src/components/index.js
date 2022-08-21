@@ -6,5 +6,4 @@ export { default as HowToUse } from './HowToUse';
 export { default as Item } from './Item';
 export { default as Navbar } from './Navbar';
 export { default as Sidebar } from './Sidebar';
-
-
+export { default as ItemModal } from './ItemModal';
