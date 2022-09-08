@@ -7,10 +7,10 @@ const Navbar = ({ mode, setMode }) => {
 
   return (
 
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{backgroundColor: "white", color: "black"}}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
 
-        <Typography variant="h6" component="a" href="/" sx={{ color: "white", textDecoration: "none" }}>
+        <Typography variant="h6" component="a" href="/" sx={{ color: "black", textDecoration: "none" }}>
           Spiceez
         </Typography>
 
@@ -22,14 +22,14 @@ const Navbar = ({ mode, setMode }) => {
 
         <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <IconButton component="a" onClick={(e) => setMode(mode === "light" ? "dark" : "light")} sx={{ display: { xs: "none", sm: "flex" } }} >
-            <Brightness4 sx={{ color: "white" }} />
+            <Brightness4 sx={{ color: "black" }} />
           </IconButton>
           <Button href="/login" color="inherit" sx={{ display: { xs: "none", sm: "flex" } }}>Login</Button>
           <IconButton href="/cart">
-            <ShoppingCart sx={{color: "white"}}/>
+            <ShoppingCart sx={{color: "black"}}/>
           </IconButton>
           <IconButton sx={{ display: { xs: "flex", sm: "none" } }} onClick={(e) => setOpen(true)} >
-            <MenuIcon sx={{color: "white"}}/>
+            <MenuIcon sx={{color: "black"}}/>
           </IconButton>
         </Box>
 

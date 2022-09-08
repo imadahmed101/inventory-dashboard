@@ -15,7 +15,7 @@ function Featured() {
   }, []);
 
   return (
-    <Box flex={3} p={2}>
+    <Box flex={3} p={2} sx={{background: `linear-gradient(to top, red 5%, #fff 95%)`}}>
       <Typography variant='h3' mb='50px' textAlign="center">Featured Items</Typography>
 
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="center" alignItems="center">
