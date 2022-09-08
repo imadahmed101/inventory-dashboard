@@ -6,7 +6,7 @@ function Hero() {
     <Box sx={{ backgroundImage: `url(/one.jpg)`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", color: "black", height: "100vh", minHeight: "600px" }}>
       <Typography variant="h2" mb="20px" fontWeight="600">Fresh <span style={{ color: "red" }}>Spice</span> Mixes</Typography>
       <Typography variant="h4" mb="50px" fontWeight="200">Check Out Our Different Blends</Typography>
-      <Button variant="contained" href="/shop" sx={{ backgroundColor: "red" }}>Shop Now</Button>
+      <Button variant="contained" href="/shop" sx={{ backgroundColor: "red", "&:hover": {backgroundColor: "#750000"} }}>Shop Now</Button>
     </Box>
   );
 }
